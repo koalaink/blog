@@ -1,2 +1,2 @@
-# blog
-Host koala.ink
+# My blog
+visit: http://koala.ink
