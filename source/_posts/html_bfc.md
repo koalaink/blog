@@ -3,6 +3,7 @@ title: BFC的概念及应用与原理
 date: 2015-11-03 17:50:01
 categories: [WEB,HTML]
 tags: [HTML,BFC]
+banner: /posts_assets/html_bfc/banner.png
 ---
 
 BFC这个概念应该都不陌生，网上也有很多的文章介绍BFC概念以及用法。看了一些关于BFC的文章，下面就对BFC的概念以及用法做个总结。  
