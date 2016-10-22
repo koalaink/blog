@@ -11,7 +11,7 @@ var gulp = require('gulp');
     gulp.task('minify-css', function() {
         return gulp.src('./public/**/*.css')
             .pipe(minifycss())
-            .pipe(gulp.dest('./public/build'));
+            .pipe(gulp.dest('./public'));
     });
     // 压缩 public 目录 html
     gulp.task('minify-html', function() {
@@ -37,13 +37,13 @@ var gulp = require('gulp');
     // 在命令行输入 gulp images 启动此任务
     gulp.task('images', function () {
         // 1. 找到图片
-        gulp.src('./photos/*.*')
+        gulp.src(['./posts_assets/*.*','./pages_assets/*.*'])
         // 2. 压缩图片
             .pipe(imagemin({
                 progressive: true
             }))
         // 3. 另存图片
-            .pipe(gulp.dest('dist/images'))
+            .pipe(gulp.dest('./dist/images'))
     });
 
 
