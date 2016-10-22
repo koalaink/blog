@@ -5,10 +5,6 @@ categories: [GIT,HEXO]
 tags: [GIT,HEXO]
 ---
 
-HEXO官网地址：[HEXO](https://hexo.io)  
-
------------
-
 ## 什么是 Hexo?    
 
 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 [Markdown](http://daringfireball.net/projects/markdown/)（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  
@@ -139,11 +135,13 @@ hexo server
 
 修改博客跟目录下的`_config.yml`文件：  
 
-```yml
+```yaml
 deploy:
   type: git
-  repository: https://github.com/your_user_name/your_user_name.github.io.git
+  repo: git@github.com:your_user_name/your_user_name.github.io.git
   branch: master
+  name: your_user_name
+  email: your_email@example.com
 ```
 
 安装插件支持git部署：  
@@ -196,3 +194,7 @@ hexo version    # 查看Hexo的版本
 如果想使用自己的域名来访问博客，那就设置一下域名的DNS解析即可。  
 
 进入 域名管理 -> 域名解析 ，类型选择CNAME记录，对应值填上 your_user_name.github.io ，保存即可。这样你就可以使用自己的域名来访问你的博客了 **（修改DNS解析不会马上生效，设置后大概需要等1~2小时左右才会生效）** 。  
+
+-----------
+
+本文链接：[HEXO+Github,搭建属于自己的博客](/2016/09/27/hexo_github_blog/)  
