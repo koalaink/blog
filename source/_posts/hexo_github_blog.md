@@ -1,5 +1,5 @@
 ---
-title: HEXO+Github,搭建属于自己的博客
+title: HEXO+Github 搭建博客
 date: 2016-9-27 14:47:03
 categories: [GIT,HEXO]
 tags: [GIT,HEXO]
