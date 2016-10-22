@@ -71,9 +71,9 @@ npm install -g hexo-cli
 安装 Hexo 完成后，执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。  
 
 ```bash
-$ hexo init <folder>
-$ cd <folder>
-$ npm install
+hexo init <folder>
+cd <folder>
+npm install
 ```
 
 新建完成后，指定文件夹的目录如下：  
