@@ -6,7 +6,8 @@
 $code-block {
   overflow: auto;
   margin: 20px 0;
-  padding: 15px;
+  // padding: 15px;
+  padding: 8px 4px;
   font-size $code-font-size;
   color: $highlight-foreground;
   background: $highlight-background;
@@ -42,6 +43,21 @@ pre {
 
   border-left: 4px solid #05A5D1;
   background-color: rgba(5, 165, 209, 0.05);
+
+  &.bash {
+    background-color: rgba(7,54,66,.9);
+  }
+
+  &.bash .line:before {
+    content: "$";
+    padding-right: 0.5em;
+    color: hsla(0,0%,100%,.8);
+    opacity: .5;
+  }
+
+  &.bash .line {
+    color: hsla(0,0%,100%,.8);
+  }
 
   pre {
     border: none;
