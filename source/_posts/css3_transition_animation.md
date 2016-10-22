@@ -19,6 +19,8 @@ transition：`transition-property || transition-duration || transition-timing-fu
 
 default:  `all 0s ease 0s`  
 
+<!-- more -->
+
 ### transition-duration  
 
 description：设置对象过渡的持续时间

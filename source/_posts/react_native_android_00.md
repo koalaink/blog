@@ -7,4 +7,8 @@ tags: [react-native,android]
 
 > “我觉得React IOS是亲儿子， React Android是捡来的”  
 
-> "可不是吗"
+> "可不是吗"  
+
+<!-- more -->
+
+ 
