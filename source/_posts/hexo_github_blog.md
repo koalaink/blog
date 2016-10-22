@@ -13,6 +13,8 @@ Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 [Markdown](h
 
 安装 Hexo 只需几分钟时间，若在安装过程中遇到问题或无法找到解决方式，可提交问题至 [HEXO官网](https://github.com/hexojs/hexo/issues)。  
 
+<!-- more -->
+
 ### 安装前提  
 
 安装 Hexo 相当简单。然而在安装前，必须检查电脑中是否已安装下列应用程序：  

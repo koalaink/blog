@@ -13,6 +13,8 @@ tags: [JS]
 
 译文开始。  
 
+<!-- more -->
+
 众所周知，Javascript是全球最流行的语言之一，它涉足Web开发，移动端开发（ [PhoneGap](http://phonegap.com/) 、 [Appcelerator](http://www.appcelerator.com/) ），服务端开发（ [Nodejs](http://nodejs.org/) 、 [Wakanda](https://wakanda.github.io/) ），还有多种第三方实现（CoffeeScript这种）。此外Javascript还是许多开发者进入编程世界所接触的第一门语言。它既可以在浏览器中简单的弹出一个alert窗口，也能达到控制机器人这种复杂的程度（比如 [nodebot](http://nodebots.io/) 、nodruino）。现在那些能够熟练编写结构清晰、性能卓越的Javascript开发者们，已经成为招聘市场上炙手可热的应聘者了。  
 
 在这篇文章中，我将向你展示一系列Javascript相关的小技巧和一些最佳实践。除了少数几个示例，大部分示例都可以在浏览器环境或者服务端环境适用。  

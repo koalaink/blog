@@ -39,6 +39,8 @@ class Rectangle{
 }
 ```
 
+<!-- more -->
+
 ## ch0802  
 
 ```Java
