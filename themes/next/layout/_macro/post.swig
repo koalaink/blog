@@ -129,6 +129,11 @@
               </span>
           {% endif %}
         </div>
+        <div class="post-banner">
+            {% if page.banner %}
+                <img src="{{ page.banner }}">
+            {% endif %}
+        </div>
       </header>
     {% endif %}
 

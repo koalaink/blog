@@ -16,6 +16,11 @@
 {% block content %}
 
   <div id="posts" class="posts-expand">
+      <div class="post-banner">
+          {% if page.banner %}
+              <img src="{{ page.banner }}">
+          {% endif %}
+      </div>
     {# tagcloud page support #}
     {% if page.type === "tags" %}
       <div class="tag-cloud">
