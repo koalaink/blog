@@ -19,9 +19,9 @@ tags: [css,float]
 这种方式是最简单易懂的，即在浮动元素的后面额外添加一个标签，并且设置样式的clear属性，代码如：`<div style="clear: both;"></div>` ，这里不一定要使用`<div>`标签，也可以使用其他任意的标签，也能起到清除浮动的效果。  
 ```html
 <div class="wrapper">
-	<div style="float: left;">left</div>
-	<div style="float: right;">right</div>
-	<div style="clear: both;"></div>
+    <div style="float: left;">left</div>
+    <div style="float: right;">right</div>
+    <div style="clear: both;"></div>
 </div>
 ```
 
@@ -33,9 +33,9 @@ tags: [css,float]
 这种方法与上面的第一种方法类似，也是添加额外标签，这里的标签是使用`<br>` ，`<br>`标签有一个clear属性，具有三种值，为：`left | right | all` ，不清楚这个属性的可以参考[ w3school <br>标签的 clear属性](http://www.w3school.com.cn/tags/tag_br_prop_clear.asp)。清除浮动的代码如：`<br clear="all">`  
 ```html
 <div class="wrapper">
-	<div style="float: left;">left</div>
-	<div style="float: right;">right</div>
-	<br clear="all"></br>
+    <div style="float: left;">left</div>
+    <div style="float: right;">right</div>
+    <br clear="all"></br>
 </div>
 ```
 
@@ -48,21 +48,21 @@ tags: [css,float]
 CSS代码如下：  
 ```css
 .clearfix::after {
-	content: " ";
-	display: block;
-	height: 0;
-	visibility: hidden;
-	clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
 }
 .clearfix {
-	*zoom: 1;
+    *zoom: 1;
 }
 ```
 使用如下：
 ```html
 <div class="wrapper clearfix">
-	<div style="float: left;">left</div>
-	<div style="float: right;">right</div>
+    <div style="float: left;">left</div>
+    <div style="float: right;">right</div>
 </div>
 ```
 其中定义after为块元素并且设置`height: 0;` 避免其对文档正常布局造成影响，将其隐藏，然后就是设置清除浮动。zoom属性是因为IE6/7 不支持after ，故使用`zoom: 1;`来触发hasLayout 。  
