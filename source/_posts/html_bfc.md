@@ -15,7 +15,7 @@ Formatting context 是 W3C CSS2.1 规范中的一个概念。它是页面中的�
 <!-- more -->
 ## Block fomatting context  
 
-首先先介绍一下BFC概念的定义，一下是摘抄自[W3C对BFC的定义](http://www.w3.org/TR/CSS2/visuren.html#block-formatting)：  
+首先先介绍一下BFC概念的定义，以下是摘抄自[W3C对BFC的定义](http://www.w3.org/TR/CSS2/visuren.html#block-formatting)：  
 
 > Floats, absolutely positioned elements, block containers (such as inline-blocks , table-cells , and table-captions ) that are not block boxes, and block boxes with 'overflow ' other than 'visible ' (except when that value has been propagated to the viewport) establish new block formatting contexts for their contents.
 >
@@ -62,8 +62,8 @@ BFC全称是Block Formatting Context，直译就是块格式化上下文，它�
 
 ```html
 <div class="container">
-  <p style="margin: 50px auto;background-color: red;">first</p>
-  <p style="margin: 50px auto;background-color: green;">second</p>
+    <p style="margin: 50px auto;background-color: red;">first</p>
+    <p style="margin: 50px auto;background-color: green;">second</p>
 </div>
 ```
 ![截图](/posts_assets/html_bfc/DL1I5ZP2W646G0OWGZXLF.png)  
@@ -71,10 +71,10 @@ BFC全称是Block Formatting Context，直译就是块格式化上下文，它�
 要解决这种问题，只需要让其中让一个`<p>`外部包裹一个`<div>`，并且触发这个`<div>`建立一个BFC，这样两个`<p>`不属于同一个BFC,他们的margin就不会重叠。  
 ```html
 <div class="container">
-  <p style="margin: 50px auto;background-color: red;">first</p>
-  <div style="overflow: auto;">
-    <p style="margin: 50px auto;background-color: green;">second</p>
-  </div>
+    <p style="margin: 50px auto;background-color: red;">first</p>
+    <div style="overflow: auto;">
+        <p style="margin: 50px auto;background-color: green;">second</p>
+    </div>
 </div>
 ```
 ![截图](/posts_assets/html_bfc/P-NDUYT657KS53FV3_XO.png)  
@@ -85,36 +85,36 @@ BFC全称是Block Formatting Context，直译就是块格式化上下文，它�
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style>
-		html, body, div{
-			margin: 0;
-			padding: 0;
-		}
-		html, body {
-			height: 100%;
-		}
-		.container {
-			height: 100%;
-			color: #fff;
-		}
-		.left {
-			width: 200px;
-			height: 300px;
-			float: left;
-			background-color: red;
-		}
-		.right {
-			height: 400px;
-			background-color: green;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    html, body, div{
+        margin: 0;
+        padding: 0;
+    }
+    html, body {
+        height: 100%;
+    }
+    .container {
+        height: 100%;
+        color: #fff;
+    }
+    .left {
+        width: 200px;
+        height: 300px;
+        float: left;
+        background-color: red;
+    }
+    .right {
+        height: 400px;
+        background-color: green;
+    }
+    </style>
 </head>
 <body>
 <div class="container">
-	<div class="left">red is left</div>
-	<div class="right">green is right</div>
+    <div class="left">red is left</div>
+    <div class="right">green is right</div>
 </div>
 </body>
 </html>
@@ -130,25 +130,25 @@ BFC全称是Block Formatting Context，直译就是块格式化上下文，它�
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style type="text/css">
-		.wrapper {
-			width: 450px;
-			border: 2px solid red;
-		}
-		.box {
-			width: 200px;
-			height: 200px;
-			border: 2px solid green;
-			margin: 10px;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .wrapper {
+        width: 450px;
+        border: 2px solid red;
+    }
+    .box {
+        width: 200px;
+        height: 200px;
+        border: 2px solid green;
+        margin: 10px;
+    }
+    </style>
 </head>
 <body>
     <div class="wrapper">
-    	<div class="box" style="float: left;"></div>
-    	<div class="box" style="float: left;"></div>
+        <div class="box" style="float: left;"></div>
+        <div class="box" style="float: left;"></div>
     </div>
 </body>
 </html>
@@ -161,25 +161,25 @@ BFC全称是Block Formatting Context，直译就是块格式化上下文，它�
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style type="text/css">
-		.wrapper {
-			width: 450px;
-			border: 2px solid red;
-		}
-		.box {
-			width: 200px;
-			height: 200px;
-			border: 2px solid green;
-			margin: 10px;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .wrapper {
+        width: 450px;
+        border: 2px solid red;
+    }
+    .box {
+        width: 200px;
+        height: 200px;
+        border: 2px solid green;
+        margin: 10px;
+    }
+    </style>
 </head>
 <body>
 <div class="wrapper" style="overflow: auto;*zoom: 1;">
-	<div class="box" style="float: left;"></div>
-	<div class="box" style="float: left;"></div>
+    <div class="box" style="float: left;"></div>
+    <div class="box" style="float: left;"></div>
 </div>
 </body>
 </html>
