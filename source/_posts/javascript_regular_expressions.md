@@ -19,6 +19,8 @@ var reg = /pattern/attributes;
 var reg = new RegExp(pattern, attributes);
 ```
 
+<!-- more -->
+
 ## Pattern  
 
 ## Attributes  
