@@ -1,5 +1,5 @@
 ---
-title: javascript正则表达式 —— 速查
+title: "javascript正则表达式 —— 速查"
 date: 2016-11-10 13:31:23
 categories: [WEB,JS]
 tags: [JS]
@@ -13,6 +13,7 @@ tags: [JS]
 ```javascript
 var reg = /pattern/attributes;
 ```
+
 实例化`RegExp`对象：  
 ```javascript
 var reg = new RegExp(pattern, attributes);
