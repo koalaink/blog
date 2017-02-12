@@ -52,33 +52,33 @@ struct node{
 
 void bfs(){
     node now , next;
-	now.x = sx ;
-	now.y = sy ;
-	now.time = 0 ;
-	vis[sx][sy] = true;
-	queue<node> q;
-	q.push(now);
-	while( !q.empty() ){
-		now = q.front();
-		q.pop();
-		if( map[now.x][now.y] == 'r' ){
-			ans = now.time;
-			return ;
-		}
-		for( int i = 0 ; i < 4 ; ++i ){
-			next.x = now.x + dir[i][0];
-			next.y = now.y + dir[i][1];
-			next.time = now.time;
-			if( !next.check() ) continue;
-			if( vis[next.x][next.y] ) continue;
-			if( map[next.x][next.y] == 'x' )
-				next.time += 2;
-			else
-				next.time += 1;
-			vis[next.x][next.y] = true;
-			q.push(next);
-		}
-	}
+  now.x = sx ;
+  now.y = sy ;
+  now.time = 0 ;
+  vis[sx][sy] = true;
+  queue<node> q;
+  q.push(now);
+  while( !q.empty() ){
+    now = q.front();
+    q.pop();
+    if( map[now.x][now.y] == 'r' ){
+      ans = now.time;
+      return ;
+    }
+    for( int i = 0 ; i < 4 ; ++i ){
+      next.x = now.x + dir[i][0];
+      next.y = now.y + dir[i][1];
+      next.time = now.time;
+      if( !next.check() ) continue;
+      if( vis[next.x][next.y] ) continue;
+      if( map[next.x][next.y] == 'x' )
+        next.time += 2;
+      else
+        next.time += 1;
+      vis[next.x][next.y] = true;
+      q.push(next);
+    }
+  }
     return ;
 }
 

@@ -23,34 +23,34 @@ tags: [ACM,C++,HDU]
 #include<stdio.h>
 using namespace std;
 
-int a[105][105] , c[105][105][105];		// a为所给元素  c[i][j][n] 表示对于一个 i j 压缩得的长度为n的数组
+int a[105][105] , c[105][105][105];    // a为所给元素  c[i][j][n] 表示对于一个 i j 压缩得的长度为n的数组
 int dp[105][105][105];
 
 int max(const int& a , const int& b){
-	return a>b?a:b;
+  return a>b?a:b;
 }
 
 int main(){
-	int n , i , j , k , l ;
-	int MAX;
-	while( scanf( "%d" , &n ) != EOF ){
-		for( i = 0 ; i < n ; ++i )
-			for( j = 0 ; j < n ; ++j )
-				scanf( "%d" , &a[i][j] );
-		memset( c , 0 , sizeof(c) );
-		memset( dp , 0 , sizeof(dp) );
-		MAX = -99999999;							// 对于MAX的初始化不能用0，因为最大子串和也可能是为负
-		for( i = 0 ; i < n ; ++i ){					// 起始行
-			for( j = i ; j < n ; ++j ){				// 结束行
-				for( k = 0 ; k < n ; ++k ){			// 循环所有列
-					for( l = i ; l <= j ; ++l ) c[i][j][k] += a[l][k] ;			// 计算每一列的和
-					dp[i][j][k] = max(dp[i][j][k-1]+c[i][j][k],c[i][j][k]);		// 求该i j 对应的压缩数组的最大子串和
-					if( dp[i][j][k] > MAX ) MAX = dp[i][j][k];
-				}
-			}
-		}
-		printf( "%d\n" , MAX );
-	}
-	return 0;
+  int n , i , j , k , l ;
+  int MAX;
+  while( scanf( "%d" , &n ) != EOF ){
+    for( i = 0 ; i < n ; ++i )
+      for( j = 0 ; j < n ; ++j )
+        scanf( "%d" , &a[i][j] );
+    memset( c , 0 , sizeof(c) );
+    memset( dp , 0 , sizeof(dp) );
+    MAX = -99999999;              // 对于MAX的初始化不能用0，因为最大子串和也可能是为负
+    for( i = 0 ; i < n ; ++i ){          // 起始行
+      for( j = i ; j < n ; ++j ){        // 结束行
+        for( k = 0 ; k < n ; ++k ){      // 循环所有列
+          for( l = i ; l <= j ; ++l ) c[i][j][k] += a[l][k] ;      // 计算每一列的和
+          dp[i][j][k] = max(dp[i][j][k-1]+c[i][j][k],c[i][j][k]);    // 求该i j 对应的压缩数组的最大子串和
+          if( dp[i][j][k] > MAX ) MAX = dp[i][j][k];
+        }
+      }
+    }
+    printf( "%d\n" , MAX );
+  }
+  return 0;
 }
 ```

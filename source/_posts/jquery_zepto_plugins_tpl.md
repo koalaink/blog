@@ -12,7 +12,7 @@ tags: [JS,jquery,zepto,plugin]
 ```js
 ;(function(){
 
-	// code your plugn ...
+  // code your plugn ...
 
 })();
 ```
@@ -22,7 +22,7 @@ tags: [JS,jquery,zepto,plugin]
 ```javascript
 ;(function( $ ){
 
-	// code your plugn ...
+  // code your plugn ...
 
 })( jQuery );
 ```
@@ -34,14 +34,14 @@ tags: [JS,jquery,zepto,plugin]
 ```javascript
 ;(function( $ ){
 
-	$.fn.extend({
-		plugn1 : function(){
-			this.html('<h1>Hello in plugn1</h1>');
-		},
-		plugn2 : function(){
-			this.html('<h1>Hello in plugn2</h1>');
-		}
-	});
+  $.fn.extend({
+    plugn1 : function(){
+      this.html('<h1>Hello in plugn1</h1>');
+    },
+    plugn2 : function(){
+      this.html('<h1>Hello in plugn2</h1>');
+    }
+  });
 
 })( jQuery );
 ```
@@ -52,17 +52,17 @@ tags: [JS,jquery,zepto,plugin]
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+  <meta charset="UTF-8">
+  <title>Document</title>
 </head>
 <body>
-	<div id="test"></div>
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/plugn.js"></script>
-	<script>
-	$("#test").plugn1();	// <h1>Hello in plugn1</h1>
-	// $("#test").plugn2();	// <h1>Hello in plugn2</h1>
-	</script>
+  <div id="test"></div>
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/plugn.js"></script>
+  <script>
+  $("#test").plugn1();  // <h1>Hello in plugn1</h1>
+  // $("#test").plugn2();  // <h1>Hello in plugn2</h1>
+  </script>
 </body>
 </html>
 ```
@@ -85,8 +85,8 @@ Objectj jQuery.extend(boolean,dest,src1[,src2,src3...])
 
 ```javascript
 var result=$.extend( true, {},
-	{ name: "John", location: {city: "Boston",county:"USA"} },
-	{ last: "Resig", location: {state: "MA",county:"China"} });
+  { name: "John", location: {city: "Boston",county:"USA"} },
+  { last: "Resig", location: {state: "MA",county:"China"} });
 ```
 
 运行的结果result值如下：   
@@ -113,47 +113,47 @@ Objectj jQuery.extend(src)
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+  <meta charset="UTF-8">
+  <title>Document</title>
 </head>
 <body>
-	<script>
+  <script>
 
-	function jQuery(){
-		// ...
-	}
+  function jQuery(){
+    // ...
+  }
 
-	jQuery.fn = jQuery.prototype = {
-		// ...
-	}
+  jQuery.fn = jQuery.prototype = {
+    // ...
+  }
 
-	/**
-	 * 这里与使用 jQuery.fn.extend(objPlugn) 等效
-	 * @type {Function}
-	 */
-	jQuery.fn.objPlugn = function(){
-		console.log("objPlugn");
-	}
+  /**
+   * 这里与使用 jQuery.fn.extend(objPlugn) 等效
+   * @type {Function}
+   */
+  jQuery.fn.objPlugn = function(){
+    console.log("objPlugn");
+  }
 
-	/**
-	 * 这里与使用 jQuery.extend(funcPlugn) 等效
-	 * @type {Function}
-	 */
-	jQuery.funcPlugn = function(){
-		console.log("funcPlugn");
-	}
+  /**
+   * 这里与使用 jQuery.extend(funcPlugn) 等效
+   * @type {Function}
+   */
+  jQuery.funcPlugn = function(){
+    console.log("funcPlugn");
+  }
 
-	/**
-	 * 这里的 jq 实例即我们使用的 $(...)
-	 * @type {jQuery}
-	 */
-	var jq = new jQuery();
+  /**
+   * 这里的 jq 实例即我们使用的 $(...)
+   * @type {jQuery}
+   */
+  var jq = new jQuery();
 
-	jq.objPlugn();			// objPlugn
-	// jq.funcPlugn();		// 报错 TypeError: jq.funcPlugn is not a function
-	jQuery.funcPlugn();		// funcPlugn
+  jq.objPlugn();      // objPlugn
+  // jq.funcPlugn();    // 报错 TypeError: jq.funcPlugn is not a function
+  jQuery.funcPlugn();    // funcPlugn
 
-	</script>
+  </script>
 </body>
 </html>
 ```
@@ -177,23 +177,23 @@ jQuery.extend 函数实现
 ```javascript
 ;(function( $ ){
 
-	/**
-	 * 如之前说,这里与使用如下形式无异
-	 * $.fn.extend({
-	 * 		myPlugn : function(){
-	 * 			// ...
-	 * 		}
-	 * })
-	 * @return {[type]} [description]
-	 */
-	$.fn.myPlugn = function(){
-		return this.each(function(){
-			var $this = $(this);
+  /**
+   * 如之前说,这里与使用如下形式无异
+   * $.fn.extend({
+   *     myPlugn : function(){
+   *       // ...
+   *     }
+   * })
+   * @return {[type]} [description]
+   */
+  $.fn.myPlugn = function(){
+    return this.each(function(){
+      var $this = $(this);
 
-			$this.html('<h1>Hello World</h1>');
+      $this.html('<h1>Hello World</h1>');
 
-		});
-	}
+    });
+  }
 
 })( jQuery );
 ```
@@ -204,17 +204,17 @@ jQuery.extend 函数实现
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+  <meta charset="UTF-8">
+  <title>Document</title>
 </head>
 <body>
-	<div class="test"></div>
-	<div class="test"></div>
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/plugn.js"></script>
-	<script>
-	$(".test").myPlugn().css({color: '#f00'});
-	</script>
+  <div class="test"></div>
+  <div class="test"></div>
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/plugn.js"></script>
+  <script>
+  $(".test").myPlugn().css({color: '#f00'});
+  </script>
 </body>
 </html>
 ```
@@ -224,65 +224,65 @@ jQuery.extend 函数实现
 ```javascript
 ;(function( $ ){
 
-	/**
+  /**
      * 将 plugn 扩展到 $.fn
      * @author   dhb(dai_huibin@126.com)
      * @date     2015-12-23
      * @datetime 2015-12-23T11:20:43+0800
      * @param    {object|string}    options    setting options
      * @param    {array}            paramArray 调用参数
-     * @return   {object}          	return self
+     * @return   {object}            return self
      */
-	$.fn.myPlugn = function(options, paramArray){
-		return this.each(function(){
-			/**
-			 * 我们在首次调用myPlugn的时候，实例化一个 MyPlugn 对象，并且将这个实例缓存在$(this).data(myPlugn)中
-			 * 这样下次再调用myPlugn的时候，就不需要再实例化，只需要从$(this).data(myPlugn)中取出之前的实例进行操作即可
-			 */
-			var $this = $(this),
-				instance = $this.data($.fn.myPlugn.info.name);
+  $.fn.myPlugn = function(options, paramArray){
+    return this.each(function(){
+      /**
+       * 我们在首次调用myPlugn的时候，实例化一个 MyPlugn 对象，并且将这个实例缓存在$(this).data(myPlugn)中
+       * 这样下次再调用myPlugn的时候，就不需要再实例化，只需要从$(this).data(myPlugn)中取出之前的实例进行操作即可
+       */
+      var $this = $(this),
+        instance = $this.data($.fn.myPlugn.info.name);
 
-			// 这里判断，如果已经存在instance，则表示已实例化过，就无需再实例化MyPlugn对象了
-			if( !instance ){
-				instance = new MyPlugn($this, options);
-				// 这里将首次实例化的instance对象缓存到$(this).data(myPlugn)中
-				$this.data($.fn.myPlugn.info.name, instance);
-			}
+      // 这里判断，如果已经存在instance，则表示已实例化过，就无需再实例化MyPlugn对象了
+      if( !instance ){
+        instance = new MyPlugn($this, options);
+        // 这里将首次实例化的instance对象缓存到$(this).data(myPlugn)中
+        $this.data($.fn.myPlugn.info.name, instance);
+      }
 
-			/**
-			 * 这里是对插件的一个优化
-			 * 判断当传入的options参数为字符串类型时，表示的是要调用instance实例中的options方法。举个例子
-			 * var test = $('.test').myPlugn();
-			 * test.myPlugn('add');
-			 * 这样的第二句代码就调用了instance.add()这个方法
-			 * 这里还能够传入参数，比如 add 函数形式为： add(a,b){ return a+b; }
-			 * 那么我们就把第二句代码改为 test.myPlugn('add',[1,2]) 即可
-			 * 注意这里的第二个参数要求是一个数组，对应你要调用的那个函数的参数，比如上面的例子就如同调用了 instance.add(1,2)
-			 */
-			typeof options === "string" && typeof instance[options] === "function" && instance[options].apply(instance,paramArray);
+      /**
+       * 这里是对插件的一个优化
+       * 判断当传入的options参数为字符串类型时，表示的是要调用instance实例中的options方法。举个例子
+       * var test = $('.test').myPlugn();
+       * test.myPlugn('add');
+       * 这样的第二句代码就调用了instance.add()这个方法
+       * 这里还能够传入参数，比如 add 函数形式为： add(a,b){ return a+b; }
+       * 那么我们就把第二句代码改为 test.myPlugn('add',[1,2]) 即可
+       * 注意这里的第二个参数要求是一个数组，对应你要调用的那个函数的参数，比如上面的例子就如同调用了 instance.add(1,2)
+       */
+      typeof options === "string" && typeof instance[options] === "function" && instance[options].apply(instance,paramArray);
 
-		});
-	};
+    });
+  };
 
-	/**
+  /**
      * plugn infomation
      * 这里可以添加一些插件的信息
      * 如版本号，插件名等
      * @type {Object}
      */
-	$.fn.myPlugn.info = {
-		"version" : "v1.0",
-		"name" : "myPlugn"
-	}
+  $.fn.myPlugn.info = {
+    "version" : "v1.0",
+    "name" : "myPlugn"
+  }
 
     /**
      * plugn default settings
      * 这里可以配置插件的一些默认项
      * @type {Object}
      */
-	$.fn.myPlugn.defaults = {
-		// default settings
-	}
+  $.fn.myPlugn.defaults = {
+    // default settings
+  }
 
 })( jQuery );
 ```
@@ -294,107 +294,107 @@ jQuery.extend 函数实现
 ```javascript
 ;(function( $ ){
 
-	// 这里先定义了我们要实现的MyPlugn类，以及在开发过程中需要用到的一些私有函数方法集合
-	var MyPlugn, myPlugnPrivateMethod;
+  // 这里先定义了我们要实现的MyPlugn类，以及在开发过程中需要用到的一些私有函数方法集合
+  var MyPlugn, myPlugnPrivateMethod;
 
-	// 这里使用立即执行的匿名函数来划分一个命名空间，避免干扰，在匿名函数内返回MyPlugn类
-	MyPlugn = (function(){
+  // 这里使用立即执行的匿名函数来划分一个命名空间，避免干扰，在匿名函数内返回MyPlugn类
+  MyPlugn = (function(){
 
-		/**
-		 * 构造函数
-		 * @author   dhb(dai_huibin@126.com)
-		 * @date     2015-12-23
-		 * @datetime 2015-12-23T11:12:00+0800
-         * @param       {object|string}   	element 	DOM object or selector
-         * @param       {object}         	options 	settings
-		 */
-		function MyPlugn(element, options){
-			// 构造函数内，将调用这儿插件函数的元素存下，并获取到一些插件配置的信息，执行初始化函数
-			this.el = $(element);
-			this.ops = $.extend({}, $.fn.myPlugn.defaults, options);
-			this.init();
-		}
+    /**
+     * 构造函数
+     * @author   dhb(dai_huibin@126.com)
+     * @date     2015-12-23
+     * @datetime 2015-12-23T11:12:00+0800
+         * @param       {object|string}     element   DOM object or selector
+         * @param       {object}           options   settings
+     */
+    function MyPlugn(element, options){
+      // 构造函数内，将调用这儿插件函数的元素存下，并获取到一些插件配置的信息，执行初始化函数
+      this.el = $(element);
+      this.ops = $.extend({}, $.fn.myPlugn.defaults, options);
+      this.init();
+    }
 
-		MyPlugn.prototype = {
-			init : function(){
-				// 这里是我们插件的一些初始化动作...
-			},
-			add : function(a,b){
-				console.log(a+b);
-			},
-			// ... 这里添加更多我们需要的函数，接口
-		};
+    MyPlugn.prototype = {
+      init : function(){
+        // 这里是我们插件的一些初始化动作...
+      },
+      add : function(a,b){
+        console.log(a+b);
+      },
+      // ... 这里添加更多我们需要的函数，接口
+    };
 
-		return MyPlugn;
-	})();
+    return MyPlugn;
+  })();
 
-	/**
-	 * plugn 私有函数对象
-	 * @type {Object}
-	 */
-	myPlugnPrivateMethod = {
-		// 这里添加不希望被外界调用到的函数，只供 MyPlugn 使用
-	};
+  /**
+   * plugn 私有函数对象
+   * @type {Object}
+   */
+  myPlugnPrivateMethod = {
+    // 这里添加不希望被外界调用到的函数，只供 MyPlugn 使用
+  };
 
-	/**
+  /**
      * 将 plugn 扩展到 $.fn
      * @author   dhb(dai_huibin@126.com)
      * @date     2015-12-23
      * @datetime 2015-12-23T11:20:43+0800
      * @param    {object|string}    options    setting options
      * @param    {array}            paramArray 调用参数
-     * @return   {object}          	return self
+     * @return   {object}            return self
      */
-	$.fn.myPlugn = function(options, paramArray){
-		return this.each(function(){
-			/**
-			 * 我们在首次调用myPlugn的时候，实例化一个 MyPlugn 对象，并且将这个实例缓存在$(this).data(myPlugn)中
-			 * 这样下次再调用myPlugn的时候，就不需要再实例化，只需要从$(this).data(myPlugn)中取出之前的实例进行操作即可
-			 */
-			var $this = $(this),
-				instance = $this.data($.fn.myPlugn.info.name);
+  $.fn.myPlugn = function(options, paramArray){
+    return this.each(function(){
+      /**
+       * 我们在首次调用myPlugn的时候，实例化一个 MyPlugn 对象，并且将这个实例缓存在$(this).data(myPlugn)中
+       * 这样下次再调用myPlugn的时候，就不需要再实例化，只需要从$(this).data(myPlugn)中取出之前的实例进行操作即可
+       */
+      var $this = $(this),
+        instance = $this.data($.fn.myPlugn.info.name);
 
-			// 这里判断，如果已经存在instance，则表示已实例化过，就无需再实例化MyPlugn对象了
-			if( !instance ){
-				instance = new MyPlugn($this, options);
-				// 这里将首次实例化的instance对象缓存到$(this).data(myPlugn)中
-				$this.data($.fn.myPlugn.info.name, instance);
-			}
+      // 这里判断，如果已经存在instance，则表示已实例化过，就无需再实例化MyPlugn对象了
+      if( !instance ){
+        instance = new MyPlugn($this, options);
+        // 这里将首次实例化的instance对象缓存到$(this).data(myPlugn)中
+        $this.data($.fn.myPlugn.info.name, instance);
+      }
 
-			/**
-			 * 这里是对插件的一个优化
-			 * 判断当传入的options参数为字符串类型时，表示的是要调用instance实例中的options方法。举个例子
-			 * var test = $('.test').myPlugn();
-			 * test.myPlugn('add');
-			 * 这样的第二句代码就调用了instance.add()这个方法
-			 * 这里还能够传入参数，比如 add 函数形式为： add(a,b){ return a+b; }
-			 * 那么我们就把第二句代码改为 test.myPlugn('add',[1,2]) 即可
-			 * 注意这里的第二个参数要求是一个数组，对应你要调用的那个函数的参数，比如上面的例子就如同调用了 instance.add(1,2)
-			 */
-			typeof options === "string" && typeof instance[options] === "function" && instance[options].apply(instance,paramArray);
+      /**
+       * 这里是对插件的一个优化
+       * 判断当传入的options参数为字符串类型时，表示的是要调用instance实例中的options方法。举个例子
+       * var test = $('.test').myPlugn();
+       * test.myPlugn('add');
+       * 这样的第二句代码就调用了instance.add()这个方法
+       * 这里还能够传入参数，比如 add 函数形式为： add(a,b){ return a+b; }
+       * 那么我们就把第二句代码改为 test.myPlugn('add',[1,2]) 即可
+       * 注意这里的第二个参数要求是一个数组，对应你要调用的那个函数的参数，比如上面的例子就如同调用了 instance.add(1,2)
+       */
+      typeof options === "string" && typeof instance[options] === "function" && instance[options].apply(instance,paramArray);
 
-		});
-	};
+    });
+  };
 
-	/**
+  /**
      * plugn infomation
      * 这里可以添加一些插件的信息
      * 如版本号，插件名等
      * @type {Object}
      */
-	$.fn.myPlugn.info = {
-		"version" : "v1.0",
-		"name" : "myPlugn"
-	}
+  $.fn.myPlugn.info = {
+    "version" : "v1.0",
+    "name" : "myPlugn"
+  }
 
     /**
      * plugn default settings
      * 这里可以配置插件的一些默认项
      * @type {Object}
      */
-	$.fn.myPlugn.defaults = {
-		// default settings
-	}
+  $.fn.myPlugn.defaults = {
+    // default settings
+  }
 
 })( jQuery );
 ```
@@ -410,119 +410,119 @@ jQuery的data函数功能十分强大，能够缓存字符串，对象，函数�
 ```javascript
 ;(function( $ ){
 
-	// 这里先定义了我们要实现的MyPlugn类，以及在开发过程中需要用到的一些私有函数方法集合
-	var MyPlugn, myPlugnPrivateMethod;
+  // 这里先定义了我们要实现的MyPlugn类，以及在开发过程中需要用到的一些私有函数方法集合
+  var MyPlugn, myPlugnPrivateMethod;
 
-	// 这里使用立即执行的匿名函数来划分一个命名空间，避免干扰，在匿名函数内返回MyPlugn类
-	MyPlugn = (function(){
+  // 这里使用立即执行的匿名函数来划分一个命名空间，避免干扰，在匿名函数内返回MyPlugn类
+  MyPlugn = (function(){
 
-		/**
-		 * 构造函数
-		 * @author   dhb(dai_huibin@126.com)
-		 * @date     2015-12-23
-		 * @datetime 2015-12-23T11:12:00+0800
-         * @param       {object|string}   	element 	DOM object or selector
-         * @param       {object}         	options 	settings
-		 */
-		function MyPlugn(element, options){
-			// 构造函数内，将调用插件的元素存下，并获取到一些插件配置，执行初始化函数
-			this.el = $(element);
-			this.ops = $.extend({}, $.fn.myPlugn.defaults, options);
-			this.init();
-		}
+    /**
+     * 构造函数
+     * @author   dhb(dai_huibin@126.com)
+     * @date     2015-12-23
+     * @datetime 2015-12-23T11:12:00+0800
+         * @param       {object|string}     element   DOM object or selector
+         * @param       {object}           options   settings
+     */
+    function MyPlugn(element, options){
+      // 构造函数内，将调用插件的元素存下，并获取到一些插件配置，执行初始化函数
+      this.el = $(element);
+      this.ops = $.extend({}, $.fn.myPlugn.defaults, options);
+      this.init();
+    }
 
-		MyPlugn.prototype = {
-			init : function(){
-				// 这里是我们插件的一些初始化动作...
-			},
-			add : function(a,b){
-				console.log(a+b);
-			},
-			// ... 这里添加更多我们需要的函数，接口
-		};
+    MyPlugn.prototype = {
+      init : function(){
+        // 这里是我们插件的一些初始化动作...
+      },
+      add : function(a,b){
+        console.log(a+b);
+      },
+      // ... 这里添加更多我们需要的函数，接口
+    };
 
-		return MyPlugn;
-	})();
+    return MyPlugn;
+  })();
 
-	/**
-	 * plugn 私有函数对象
-	 * @type {Object}
-	 */
-	myPlugnPrivateMethod = {
-		// 这里添加不希望被外界调用到的函数，只供 MyPlugn 使用
-	};
+  /**
+   * plugn 私有函数对象
+   * @type {Object}
+   */
+  myPlugnPrivateMethod = {
+    // 这里添加不希望被外界调用到的函数，只供 MyPlugn 使用
+  };
 
-	/**
+  /**
      * 将 plugn 扩展到 $.fn
      * @author   dhb(dai_huibin@126.com)
      * @date     2015-12-23
      * @datetime 2015-12-23T11:20:43+0800
      * @param    {object|string}    options    setting options
      * @param    {array}            paramArray 调用参数
-     * @return   {object}          	return self
+     * @return   {object}            return self
      */
-	$.fn.myPlugn = function(options, paramArray){
-		return this.each(function(){
-			/**
-			 * 我们在首次调用myPlugn的时候，实例化一个 MyPlugn 对象，并且将这个实例缓存在$(this).data(myPlugn)中
-			 * 这样下次再调用myPlugn的时候，就不需要再实例化，只需要从$(this).data(myPlugn)中取出之前的实例进行操作即可
-			 */
-			var $this = $(this),
-				instance = $.fn.myPlugn.lookup[$this.data($.fn.myPlugn.info.name)];
+  $.fn.myPlugn = function(options, paramArray){
+    return this.each(function(){
+      /**
+       * 我们在首次调用myPlugn的时候，实例化一个 MyPlugn 对象，并且将这个实例缓存在$(this).data(myPlugn)中
+       * 这样下次再调用myPlugn的时候，就不需要再实例化，只需要从$(this).data(myPlugn)中取出之前的实例进行操作即可
+       */
+      var $this = $(this),
+        instance = $.fn.myPlugn.lookup[$this.data($.fn.myPlugn.info.name)];
 
-			// 这里判断，如果已经存在instance，则表示已实例化过，就无需再实例化MyPlugn对象了
-			if( !instance ){
-				instance = new MyPlugn($this, options);
-				// 这里将首次实例化的instance对象缓存到$.myPlugn.lookup中，对应key值存入$(this).data(myPlugn)中
-				$.fn.myPlugn.lookup[++$.fn.myPlugn.lookup.i] = instance;
-				$this.data($.fn.myPlugn.info.name,$.fn.myPlugn.lookup.i);
-			}
+      // 这里判断，如果已经存在instance，则表示已实例化过，就无需再实例化MyPlugn对象了
+      if( !instance ){
+        instance = new MyPlugn($this, options);
+        // 这里将首次实例化的instance对象缓存到$.myPlugn.lookup中，对应key值存入$(this).data(myPlugn)中
+        $.fn.myPlugn.lookup[++$.fn.myPlugn.lookup.i] = instance;
+        $this.data($.fn.myPlugn.info.name,$.fn.myPlugn.lookup.i);
+      }
 
-			/**
-			 * 这里是对插件的一个优化
-			 * 判断当传入的options参数为字符串类型时，表示的是要调用instance实例中的options方法。举个例子
-			 * var test = $('.test').myPlugn();
-			 * test.myPlugn('add');
-			 * 这样的第二句代码就调用了instance.add()这个方法
-			 * 这里还能够传入参数，比如 add 函数形式为： add(a,b){ return a+b; }
-			 * 那么我们就把第二句代码改为 test.myPlugn('add',[1,2]) 即可
-			 * 注意这里的第二个参数要求是一个数组，对应你要调用的那个函数的参数，比如上面的例子就如同调用了 instance.add(1,2)
-			 */
-			typeof options === "string" && typeof instance[options] === "function" && instance[options].apply(instance,paramArray);
+      /**
+       * 这里是对插件的一个优化
+       * 判断当传入的options参数为字符串类型时，表示的是要调用instance实例中的options方法。举个例子
+       * var test = $('.test').myPlugn();
+       * test.myPlugn('add');
+       * 这样的第二句代码就调用了instance.add()这个方法
+       * 这里还能够传入参数，比如 add 函数形式为： add(a,b){ return a+b; }
+       * 那么我们就把第二句代码改为 test.myPlugn('add',[1,2]) 即可
+       * 注意这里的第二个参数要求是一个数组，对应你要调用的那个函数的参数，比如上面的例子就如同调用了 instance.add(1,2)
+       */
+      typeof options === "string" && typeof instance[options] === "function" && instance[options].apply(instance,paramArray);
 
-		});
-	};
+    });
+  };
 
-	/**
+  /**
      * plugn infomation
      * 这里可以添加一些插件的信息
      * 如版本号，插件名等
      * @type {Object}
      */
-	$.fn.myPlugn.info = {
-		"version" : "v1.0",
-		"name" : "myPlugn"
-	}
+  $.fn.myPlugn.info = {
+    "version" : "v1.0",
+    "name" : "myPlugn"
+  }
 
-	/**
+  /**
      * plugn instance
      * i 为 MyPlugn 实例的计数
      * 将instance实例存放在这个对象中
      * 获取instance的key为 $(this).data('myPlugn') => instance
      * @type {Object}
      */
-	$.fn.myPlugn.lookup = {
-		i : 0
-	}
+  $.fn.myPlugn.lookup = {
+    i : 0
+  }
 
     /**
      * plugn default settings
      * 这里可以配置插件的一些默认项
      * @type {Object}
      */
-	$.fn.myPlugn.defaults = {
-		// default settings
-	}
+  $.fn.myPlugn.defaults = {
+    // default settings
+  }
 
 })( Zepto );
 ```
