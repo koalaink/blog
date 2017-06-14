@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <textarea id="text1" name="text1" rows="12" cols="80" placeholder="text1"></textarea>
+  <textarea id="text2" name="text2" rows="12" cols="80" placeholder="text2"></textarea>
+  <div style="margin-bottom: 20px;">
+    <label for="line">Line based:</label>
+    <input id="line" type="checkbox" name="line" value="line">
+    <button onclick="diff()">show diffs!</button>
+  </div>
+  <div id="consumed"></div>
+  <p></p>
+  <div id="result"></div>
+  <script src="/rush/algorithm_diff/lib/diff_match.js"></script>
+  <script>
+
+    function diff(){
+      var diffMatch = new DiffMatch();
+      var dom1 = document.getElementById('text1');
+      var dom2 = document.getElementById('text2');
+      var dom3 = document.getElementById('line');
+
+      var cons = document.getElementById('consumed');
+      var rest = document.getElementById('result');
+
+      var diffs = diffMatch.diff(dom1.value, dom2.value, dom3.checked);
+      cons.innerHTML = 'diff耗时：'+diffMatch.timeConsumed+'ms<br>';
+      rest.innerHTML = diffMatch.prettyHtml(diffs);
+
+      console.log(dom1.value, dom2.value);
+    }
+  </script>
+</body>
+</html>
