@@ -4,6 +4,17 @@ date: 2017-05-31 18:02:08
 categories: [Algorithm,DIFF]
 tags: [DIFF,LCS,SED,DP]
 ---
+
+## 什么是Diff  
+在日常工作中，diff是大家常用的一个工具，它能快速的计算出两个文本的差异，并将差异结果一目了然的展示出来，帮助我们快速定位在不同版本中文件的修改位置。  
+
+<!-- more -->
+
+<img style="margin: 0 auto;" width="300" src="/posts_assets/algorithm_diff/diff_simple_flowchart.jpeg" alt="Diff简单流程图">
+
+以上流程图简单描述了我们使用diff程序的流程，只需往diff程序中输入text1与text2（我们规定，text1为初始文本，text2为编辑文本），diff程序会自动计算出两个文本的差异并可视化输出。  
+
+在这篇文章中，将会简单的谈一谈diff程序内部流程是如何流转并实现的，以及介绍在实现过程中会遇到的一些算法问题。  
 <script src="/rush/algorithm_diff/lib/diff_match.js"></script>
 <script>
 (function(){
@@ -30,15 +41,6 @@ tags: [DIFF,LCS,SED,DP]
   }, 200);
 })();
 </script>
-
-## 什么是Diff  
-在日常工作中，diff是大家常用的一个工具，它能快速的计算出两个文本的差异，并将差异结果一目了然的展示出来，帮助我们快速定位在不同版本中文件的修改位置。
-
-<img style="margin: 0 auto;" width="300" src="/posts_assets/algorithm_diff/diff_simple_flowchart.jpeg" alt="Diff简单流程图">
-
-以上流程图简单描述了我们使用diff程序的流程，只需往diff程序中输入text1与text2（我们规定，text1为初始文本，text2为编辑文本），diff程序会自动计算出两个文本的差异并可视化输出。  
-
-在这篇文章中，将会简单的谈一谈diff程序内部流程是如何流转并实现的，以及介绍在实现过程中会遇到的一些算法问题。  
 
 ## 问题分析  
 举个简单的例子：
