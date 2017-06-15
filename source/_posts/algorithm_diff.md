@@ -3,6 +3,7 @@ title: Diff算法与实现
 date: 2017-05-31 18:02:08
 categories: [Algorithm,Diff]
 tags: [DIFF,LCS,SED,DP]
+banner: /posts_assets/algorithm_diff/banner.jpeg
 ---
 
 ## 什么是Diff  
