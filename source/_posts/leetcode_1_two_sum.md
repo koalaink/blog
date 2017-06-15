@@ -37,14 +37,14 @@ Runtime: **95 ms**
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    var i, hash = {};
-    for(i = 0; i < nums.length; ++i){
-        if(hash[nums[i]] !== undefined){
-            return [hash[nums[i]], i];
-        } else {
-            hash[target - nums[i]] = i;
-        }
+  var i, hash = {};
+  for(i = 0; i < nums.length; ++i){
+    if(hash[nums[i]] !== undefined){
+      return [hash[nums[i]], i];
+    } else {
+      hash[target - nums[i]] = i;
     }
-    return [-1, -1];
+  }
+  return [-1, -1];
 };
 ```
