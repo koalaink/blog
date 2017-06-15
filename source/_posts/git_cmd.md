@@ -85,7 +85,8 @@ git tag tag_name -m 'message' # 创建tag_name标签
 git show tag_name # 查看tag信息
 git checkout tag_name # 切换到tag_name标签
 git tag -d tag_name # 删除tag_name标签
-git push origin tag_name # 将tag_name标签提交到远端git push origin --delete tag tag_name # 删除远程tag_name标签
+git push origin tag_name # 将tag_name标签提交到远端
+git push origin --delete tag tag_name # 删除远程tag_name标签
 ```
 
 ## Log  
