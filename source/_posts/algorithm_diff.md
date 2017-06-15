@@ -15,32 +15,6 @@ tags: [DIFF,LCS,SED,DP]
 以上流程图简单描述了我们使用diff程序的流程，只需往diff程序中输入text1与text2（我们规定，text1为初始文本，text2为编辑文本），diff程序会自动计算出两个文本的差异并可视化输出。  
 
 在这篇文章中，将会简单的谈一谈diff程序内部流程是如何流转并实现的，以及介绍在实现过程中会遇到的一些算法问题。  
-<script src="/rush/algorithm_diff/lib/diff_match.js"></script>
-<script>
-(function(){
-  var diffMatch = new DiffMatch();
-  var diffs = diffMatch.diff("console.log('hello world');", "console.log('hi js');");
-  var t = setInterval(function(){
-    var dom = document.getElementById('diff-demo-1');
-    if(dom){
-      clearInterval(t);
-      dom.innerHTML = 'diff结果：' + diffMatch.prettyHtml(diffs);
-    }
-  }, 200);
-})();
-
-(function(){
-  var diffMatch = new DiffMatch();
-  var diffs = diffMatch.diff("ABCABBA", "CBABAC");
-  var t = setInterval(function(){
-    var dom = document.getElementById('diff-demo-2');
-    if(dom){
-      clearInterval(t);
-      dom.innerHTML = 'diff结果：' + diffMatch.prettyHtml(diffs);
-    }
-  }, 200);
-})();
-</script>
 
 ## 问题分析  
 举个简单的例子：
@@ -48,7 +22,7 @@ tags: [DIFF,LCS,SED,DP]
 text1: console.log('hello world');
 text2: console.log('hi js');
 ```
-<p id="diff-demo-1"></p>
+<p><span>console.log('h</span><del style="background:#ffe6e6;">ello</del><ins style="background:#e6ffe6;">i</ins><span>&nbsp;</span><del style="background:#ffe6e6;">world</del><ins style="background:#e6ffe6;">js</ins><span>');</span></p>
 
 从结果中我们可以看出，diff程序的可视化输出，无非是将文本中未改变的部分原样输出，其余字符，若是在text1中，则被标记为删除；若是在text2中，则被标记为新增。如下使用红色标记两个文本的未改变部分：
 text1: <font color="red">console.log('h</font>ello<font color="red">-</font>world<font color="red">');</font>  
@@ -99,7 +73,7 @@ for Xm的所有子序列 Zx
 仅仅得到最长公共子序列的长度显然不足以达到我们的目的，为了能够得到一个完整的LCS，我们在计算dp表格的过程中，还需要同时记录计算每个单元格值的来源位置，使用`↖︎`、`↑`、`←`三个字符来表示，如下图（若dp[i-1][j]与dp[i][j-1]相等时，默认取左边单元格，即dp[i][j-1]）：  
 <img style="margin: 0 auto;" width="300" src="/posts_assets/algorithm_diff/lcs_map_mark.jpeg" alt="lcs map">  
 在上图的表格中，我们只需要从最右下角的单元格开始，按照箭头的指示就可以一步步往左上角靠近，如图中标记红色的路线。在此路线中，`←`符号表示Y扫过一个字符，此字符需标记为新增；`↑`符号表示X扫过一个字符，此字符需标记为删除；`↖︎`表示X、Y同时扫过一个字符，此字符为LCS中的元素，为未改变字符。  
-如上操作，我们就可以得到X与Y的一个<span id="diff-demo-2"></span>
+如上操作，我们就可以得到X与Y的一个<span><del style="background:#ffe6e6;">AB</del><span>C</span><del style="background:#ffe6e6;">A</del><span>B</span><ins style="background:#e6ffe6;">A</ins><span>BA</span><ins style="background:#e6ffe6;">C</ins></span>
 
 至此我们已经可以实现一个简单的diff程序了。  
 [前往阅读“阉割版”Diff插件源码](/rush/algorithm_diff/lib/diff_match.js)  
