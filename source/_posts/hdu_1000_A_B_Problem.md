@@ -1,7 +1,7 @@
 ---
 title: HDU 1000 A + B Problem
 date: 2013-11-12 12:31:12
-categories: [ACM,ACM]
+categories: [Algorithm, ACM,ACM]
 tags: [ACM,C++,HDU]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: HDU 1715 大菲波数 大数
 date: 2013-11-22 22:45:11
-categories: [ACM,大数]
+categories: [Algorithm, ACM,大数]
 tags: [ACM,C++,HDU,大数]
 ---
 

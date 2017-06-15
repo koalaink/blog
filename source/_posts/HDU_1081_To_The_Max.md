@@ -1,7 +1,7 @@
 ---
 title: HDU 1081 To The Max
 date: 2013-11-13 21:56:22
-categories: [ACM,DP]
+categories: [Algorithm, ACM,DP]
 tags: [ACM,C++,HDU]
 ---
 

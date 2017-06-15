@@ -1,7 +1,7 @@
 ---
 title: HDU 2845 Beans
 date: 2013-11-22 13:03:31
-categories: [ACM,ACM]
+categories: [Algorithm, ACM, ACM]
 tags: [ACM,C++,HDU]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: HDU 1242 Rescue
 date: 2013-11-21 18:11:34
-categories: [ACM,BFS]
+categories: [Algorithm, ACM,BFS]
 tags: [ACM,C++,HDU,BFS]
 ---
 

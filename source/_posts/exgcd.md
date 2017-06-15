@@ -1,7 +1,7 @@
 ---
 title: 扩展欧几里得算法及实现
 date: 2014-12-02 12:07:22
-categories: [ACM,数论]
+categories: [Algorithm, ACM,数论]
 tags: [ACM,C++,数论]
 ---
 

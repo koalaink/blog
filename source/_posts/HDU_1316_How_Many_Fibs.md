@@ -1,7 +1,7 @@
 ---
 title: HDU 1316 How Many Fibs?
 date: 2013-11-24 20:42:41
-categories: [ACM,大数]
+categories: [Algorithm, ACM,大数]
 tags: [ACM,C++,HDU,大数]
 ---
 

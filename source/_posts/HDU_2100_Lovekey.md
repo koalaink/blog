@@ -1,7 +1,7 @@
 ---
 title: HDU 2100 Lovekey
 date: 2013-11-14 22:56:38
-categories: [ACM,ACM]
+categories: [Algorithm, ACM,ACM]
 tags: [ACM,C++,HDU]
 ---
 

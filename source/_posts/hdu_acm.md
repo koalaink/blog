@@ -1,7 +1,7 @@
 ---
 title: 计算机学院大学生程序设计竞赛 杭电ACM校赛
 date: 2015-11-29 21:31:27
-categories: [ACM,ACM]
+categories: [Algorithm, ACM, ACM]
 tags: [ACM,C++,HDU]
 ---
 
