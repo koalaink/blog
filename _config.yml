@@ -75,11 +75,11 @@ feed:
   limit: 0  #在 rss 中最多生成的文章数(0显示所有)
 
 # duoshuo shortname
-duoshuo_shortname: koalaink
-duoshuo_info:
-  ua_enable: true  #是否显示ua
-  admin_enable: true #是否显示博主
-  user_id: 6336138672059974401  #多说用户id
+#duoshuo_shortname: koalaink
+#duoshuo_info:
+#  ua_enable: true  #是否显示ua
+#  admin_enable: true #是否显示博主
+#  user_id: 6336138672059974401  #多说用户id
   #admin_nickname: 神 #博主昵称自定义
 
 # baidu analytics
