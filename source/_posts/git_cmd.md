@@ -115,3 +115,9 @@ git commit -m 'update .gitignore'
 git remote rm origin #删除旧的git地址
 git remote add origin [url] #添加新的git地址
 ```
+
+### 查看文件变更记录
+
+```bash
+git log -p file_name
+```
