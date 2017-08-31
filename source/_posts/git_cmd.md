@@ -121,3 +121,9 @@ git remote add origin [url] #添加新的git地址
 ```bash
 git log -p file_name
 ```
+
+### 更新远程分支列表信息
+
+```bash
+git remote update origin --prune
+```
