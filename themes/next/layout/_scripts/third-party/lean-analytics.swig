@@ -45,7 +45,7 @@
         });
     }
 
-    function addCount(Counter) {
+    function addCount(Counter, History) {
       var $visitors = $(".leancloud_visitors");
       var url = $visitors.attr('id').trim();
       var title = $visitors.attr('data-flag-title').trim();
@@ -93,12 +93,34 @@
           console.log('Error:' + error.code + " " + error.message);
         }
       });
+
+      var newHistory = new History();
+      /* Set ACL */
+      var acl = new AV.ACL();
+      acl.setPublicReadAccess(true);
+      acl.setPublicWriteAccess(true);
+      newHistory.setACL(acl);
+      /* End Set ACL */
+      newHistory.set("title", title);
+      newHistory.set("url", url);
+      newHistory.set("time", 1);
+      newHistory.save(null, {
+        success: function(newhistory) {
+          // var $element = $(document.getElementById(url));
+          // $element.find('.leancloud-visitors-count').text(newhistory.get('time'));
+        },
+        error: function(newhistory, error) {
+          console.log('Failed to create');
+        }
+      });
+
     }
 
     $(function() {
       var Counter = AV.Object.extend("Counter");
+      var History = AV.Object.extend("History");
       if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
+        addCount(Counter, History);
       } else if ($('.post-title-link').length > 1) {
         showTime(Counter);
       }
