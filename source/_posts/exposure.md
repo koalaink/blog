@@ -2,7 +2,7 @@
 title: 停留曝光
 date: 2017-3-22 10:46:43
 categories: [WEB,JS]
-tags: [JS,plugin,exposure]
+tags: [JS,埋点,统计,曝光,exposure]
 ---
 
 ## 应用背景  
