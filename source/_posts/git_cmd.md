@@ -45,6 +45,9 @@ git push origin --delete mybran # 删除远端mybranch分支
 
 git merge mybranch # 将mybranch分支合并到当前分支
 git merge --no-ff mybranch # 将mybranch分支合并到当前分支 使用非快进式合并
+
+git merge --continue # 合并分支冲突解决后 继续合并
+git merge --abort # 放弃合并分支
 ```
 
 ## 提交  
